@@ -1,5 +1,4 @@
 
-
 INPUTDIR=input
 OUTPUTDIR=output
 PERFORM=./source/perform.py
@@ -8,7 +7,7 @@ LMODELDIR=./learning/model
 
 
 all: $(LMODELDIR)/table.txt
-	mkdir $(OUTPUTDIR)/
+	mkdir -p $(OUTPUTDIR)/
 	$(PERFORM) $(INPUTDIR)/ $(OUTPUTDIR)/
 
 

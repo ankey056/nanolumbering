@@ -34,10 +34,10 @@ def eval_total_image (source):
 def finalize_result (total_image):
     zero = 0
     mask = 255
-    
+
     imax = np.max(total_image)
     rimin, rimax = intensity_range
-    r = mask * np.ones(total_image.shape, np.int8) 
+    r = mask * np.ones(total_image.shape, np.int8)
     r[total_image < rimin*imax] = zero
     if rimax < 1.0: r[total_image > rimax*imax] = zero
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 
-import cv2, os, sys 
+import cv2, os, sys
 from get_mask.accuracy_estimation import estimate_accuracy
 from get_mask.searching_methods import searching_methods_table
 
@@ -18,7 +18,7 @@ def collect_learning_materials():
         test = next((f for f in os.listdir(tests_path) \
                      if name == os.path.splitext(f)[0]),
                     None)
-        if test: 
+        if test:
             materials.append(Learning_materials(tests_path + test,
                                                 standards_path + standard))
 
@@ -36,7 +36,7 @@ def run_learning ():
             standard_img = cv2.imread(m.standard, 0)
             test_img = cv2.imread(m.test, 0)
             score += estimate_accuracy(method, test_img, standard_img)
-        
+
         if score > 1: print ' '.join([str(score), line])
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ def find_objects(img, scale=None):
     c, ags = sel_contours(cnts,
                           contours_stat(cnts))
     r.stat = contours_stat(c)
-    
+
     r.ags = ags
     r.contours = c
     r.for_collecting = None
@@ -43,4 +43,3 @@ def process_file (image_file, output_file):
     data = find_objects(cv.imread(image_file))
     do_output(data, output_file, scale=scale)
     return data.for_collecting
-

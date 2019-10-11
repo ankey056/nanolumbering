@@ -25,7 +25,7 @@ def contour_parameters (c, scale_factor=None):
         w, h, p = map(lambda x: float(x)*scale_factor,
                       (w, h, p))
         s = float(s)*pow(scale_factor,2)
-    
+
     d_l = float(p)/math.pi
     d_s = 2*math.sqrt(float(s)/math.pi)
     d = math.sqrt(w*w+h*h)
@@ -46,7 +46,7 @@ column_names = "#   i      w         h          s        p      " + \
                "   d_l       d_s        d     type\n"
 def do_output(data, output_file, scale=None):
     img = data.origimg
-    
+
     stat_format(data.stat,
                 filename_with_altext(output_file, "txt"),
                 scale=scale)
@@ -61,20 +61,20 @@ def do_output(data, output_file, scale=None):
                                               scale.unit))
     tabf.write(column_names)
 
-    i = 0 
+    i = 0
     for cnt in data.contours:
         cv.drawContours(img, data.contours, i, (90, 204, 0), -1)
         i+=1
-        tabf.write(contour_parameters_row(cnt, 'single', i, 
+        tabf.write(contour_parameters_row(cnt, 'single', i,
                                           scale_factor=scale_factor))
 
     j=0
-    for cnt in data.ags: 
+    for cnt in data.ags:
         cv.drawContours(img, data.ags, j, (32, 203, 240), -1)
         j+=1
         i+=1
-        tabf.write(contour_parameters_row(cnt, 'ag', i, 
+        tabf.write(contour_parameters_row(cnt, 'ag', i,
                                           scale_factor=scale_factor))
 
-    tabf.close()                    
+    tabf.close()
     cv.imwrite(output_file, img)

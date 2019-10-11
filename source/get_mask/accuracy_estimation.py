@@ -11,6 +11,6 @@ def estimate_accuracy (method, test_img, standard_img):
     result = method.apply(test_img)
     coincidence = mask_sum(np.bitwise_and(result, standard_img))
     mistake = mask_sum(np.bitwise_and(np.bitwise_not(standard_img),
-                                      result)) 
+                                      result))
     if mistake == 0: mistake = 0.5
     return float(coincidence)/mistake

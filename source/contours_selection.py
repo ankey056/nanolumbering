@@ -4,7 +4,7 @@ import numpy as np
 
 minI = 0.035
 
-def Ifun (contour, P): 
+def Ifun (contour, P):
     return cv.contourArea(contour)/pow(P,2)
 
 

@@ -1,6 +1,6 @@
 
 class Searching_method:
-    name = "" 
+    name = ""
 
     def __init__(self, p):
         self.parameters = p or []
@@ -29,6 +29,6 @@ class Intensity_filtering(Searching_method):
         rimin = float(args[2])
         rimax = float(args[3])
         return cls(r, sigma, rimin, rimax)
-        
+
 class Intensity_filtering_inside_out(Intensity_filtering):
     name = "intensity-filtering-inside-out"

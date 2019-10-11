@@ -49,6 +49,3 @@ searching_methods_table = {}
 
 for method in searching_methods:
     searching_methods_table[method.name] = method
-
-
-

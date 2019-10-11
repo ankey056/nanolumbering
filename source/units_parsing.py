@@ -21,4 +21,3 @@ def tiff2scale (filename):
     x = float(x)
 
     return Scale(x, u)
-

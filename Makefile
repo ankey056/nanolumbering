@@ -8,6 +8,7 @@ LMODELDIR=./learning/model
 
 
 all: $(LMODELDIR)/table.txt
+	mkdir $(OUTPUTDIR)/
 	$(PERFORM) $(INPUTDIR)/ $(OUTPUTDIR)/
 
 
